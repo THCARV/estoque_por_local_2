@@ -1,0 +1,130 @@
+ENDEREÇO = ("RUA GERALDO MORAN")
+
+IN = "0"
+OUT = "10000"
+CID = "OSASCO"
+LINK = "https://meuvivofixo.vivo.com.br/servlet/Satellite?c=Page&cid=1382552299186&pagename=MeuVivoFixo%2FPage%2FTemplateGlobalAreaAberta"
+
+#IMPORTAÇÃO DAS BIBLIOTECAS#
+
+import pyautogui as pa
+import time
+import pyperclip as py
+#OBTER LOCALIZAÇÃO DA POSIÇÃO PARA O CLIC#
+time.sleep(4)
+pa.position()
+#pa.click(x=970, y=428)
+###IN DO CÓD RESPOSÁVEL POR REALIZAR O PROCESSO DE BUSCAR NUMEROS DO PROVEDOR VIVO E COLAR EM UMA BASE DO EXCEL###
+
+
+
+#ABRIR UMA NOVA PAG DO NAVEGADOR
+pa.hotkey("ctrl", "t")
+#ACESSAR SITE DA VIVO
+py.copy(LINK)
+time.sleep(1)
+pa.hotkey("ctrl", "v")
+time.sleep(1)
+pa.hotkey("enter")
+time.sleep(1)
+#DIGITAR O ENDEREÇO
+pa.press("tab")
+py.copy(ENDEREÇO)
+time.sleep(1)
+pa.hotkey("ctrl", "v")
+pa.press("tab")
+#DIGITAR O Nº INICIAL
+time.sleep(1)
+py.copy(IN)
+time.sleep(1)
+pa.hotkey("ctrl", "v")
+pa.press("tab")
+#DIGITAR O Nº FINAL
+time.sleep(1)
+py.copy(OUT)
+time.sleep(1)
+pa.hotkey("ctrl", "v")
+pa.press("tab")
+#DIGITAR A CIDADE
+pa.press("tab")
+time.sleep(1)
+py.copy(CID)
+time.sleep(1)
+pa.hotkey("ctrl", "v")
+
+#DESCER ATÉ O FINAL
+time.sleep(1)
+pa.click(x=970, y=428)
+pa.hotkey("ctrl", "end")
+time.sleep(1)
+#CLICAR EM PESQUISAR
+time.sleep(3)
+pa.click(x=100, y=657)
+#COPIAR TUDO
+time.sleep(1)
+pa.hotkey("ctrl", "a")
+pa.hotkey("ctrl", "c")
+#ABRIR EXCEL
+time.sleep(1)
+pa.hotkey("alt", "esc")
+#IR PARA A PLANILHA ONDE SERÁ COLADO OS TERRITÓRIOS
+pa.click(x=173, y=688)
+#LIMPAR A  BASE EXISTENTE
+time.sleep(1)
+pa.hotkey("ctrl", "shift", "K")
+#COLAR TUDO
+time.sleep(1)
+pa.hotkey("ctrl", "v")
+#VOLTAR PARA O NAVEGADOR
+time.sleep(1)
+pa.hotkey("alt", "esc")
+#ESCOLHER A 2ª ABA DE NUMEROS
+time.sleep(1)
+pa.click(x=970, y=428)
+pa.hotkey("ctrl", "end")
+pa.click(x=397, y=612)
+#COPIAR TUDO
+time.sleep(1)
+pa.hotkey("ctrl", "a")
+pa.hotkey("ctrl", "c")
+#VOLTAR PARA A PLANILHA
+time.sleep(1)
+pa.hotkey("alt", "esc")
+#RODAR MACRO PARA IR ATÉ A ULTIMA LINHA PRESNCHIDA
+time.sleep(1)
+pa.hotkey("ctrl", "shift", "J")
+time.sleep(1)
+pa.press("down")
+#COLAR
+time.sleep(1)
+pa.hotkey("ctrl", "v")
+#VOLTAR PARA O NAVEGADOR
+time.sleep(1)
+pa.hotkey("alt", "esc")
+#ESCOLHER A 3ª ABA DE NUMEROS
+time.sleep(1)
+pa.click(x=970, y=428)
+pa.hotkey("ctrl", "end")
+pa.click(x=430, y=613)
+#COPIAR TUDO
+time.sleep(1)
+pa.hotkey("ctrl", "a")
+pa.hotkey("ctrl", "c")
+#VOLTAR PARA A PLANILHA
+time.sleep(1)
+pa.hotkey("alt", "esc")
+#RODAR MACRO PARA IR ATÉ A ULTIMA LINHA PRESNCHIDA
+time.sleep(1)
+pa.hotkey("ctrl", "shift", "J")
+time.sleep(1)
+pa.press("down")
+#COLAR
+time.sleep(1)
+pa.hotkey("ctrl", "v")
+#RODAR A MACRO PARA FORMATAR TODOS OS NUMEROS COPIADOS.
+time.sleep(1)
+pa.hotkey("ctrl", "shift", "T")
+
+
+
+#END
